@@ -4,11 +4,13 @@ int					main(int argc, char *argv[])
 {
 	SDL_Window	*window;
 	SDL_Event	event;
+	int			num_joysticks;
 	t_inputs	inputs;
 
 	initialization(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
 	window = new_window(800, 600, argc, argv);
-	detect_game_controllers();
+	num_joysticks = detect_joysticks();
+	print_joysticks_info(num_joysticks);
 	inputs.run = 1;
 	while (inputs.run)
 	{

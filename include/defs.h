@@ -17,6 +17,8 @@ SDL_Window	*new_window(int x, int y, int argc, char *argv[]);
 
 void		manage_events(SDL_Event *event, t_inputs *inputs);
 
-int			detect_game_controllers(void);
+int			detect_joysticks(void);
+
+void		print_joysticks_info(int num_game_controllers);
 
 #endif
